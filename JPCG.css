@@ -1,0 +1,338 @@
+/*JAD'S NOTES TO SELF: 
+	COLOR PALLET: Glacier Grey - #C5C6C7, Purple Grey - #786F80 or rgb(120, 111, 128), Dark Purple Grey - rgb(72, 67, 77), Cyan - #009097, Light Blue - lightblue*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+h1, h3 {
+    font-weight: normal;
+    font-family: "Century Gothic";
+    margin: 10px;
+    padding: 10px;
+	transform: scalex(1.5);
+	text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+h1 {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 20px;
+	color: lightblue;
+}
+@keyframes Corruption {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(5px, -5px); }
+    20% { transform: translate(-5px, 5px); }
+    30% { transform: translate(5px, 5px); }
+    40% { transform: translate(-5px, -5px); }
+    50% { transform: translate(0, 0); }
+    100% { transform: translate(0, 0); }
+}
+.CorruptionEffect {
+    animation: Corruption 0.5s infinite;
+    background: repeating-linear-gradient(to bottom, rgba(255, 0, 0, 0.1), rgba(0, 255, 0, 0.1), rgba(0, 0, 255, 0.1) 10px);
+}
+.JadContentStyle {
+    font-family: "Century Gothic";
+    padding: 0;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.JadStyle {
+    border: 5px solid white;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+@keyframes DayNightCycle {
+    0% { background-image: url('BG1.jpg'); }
+    35% { background-image: url('BG2.jpg'); }
+    70% { background-image: url('BG3.jpg'); }
+    100% { background-image: url('BG4.jpg'); }
+}
+.Background {
+    position: relative;
+    z-index: 0;
+}
+.Background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    filter: blur(5px);
+	animation: DayNightCycle;
+	animation-timeline: scroll();
+    z-index: -1;
+}
+#NavigationBar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 10;
+    justify-content: space-between;
+    align-items: center;
+}
+#NavigationBar .Left, #NavigationBar .Right {
+    display: flex;
+    align-items: center;
+}
+#NavigationBar .Top, .Bottom { 
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#NavigationBar .Left {
+    flex: 1;
+    justify-content: space-evenly;
+}
+#NavigationBar .Right {
+    flex: 1;
+    justify-content: space-evenly;
+}
+#NavigationBar .RightLeft {
+    flex: 5;
+	display: grid;
+    place-items: center;
+}
+#NavigationBar .RightRight {
+    flex: 2;
+    justify-content: flex-end;
+}
+#NavigationBar a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: color 0.6s, text-shadow 0.6s;
+	padding: 10px 20px;
+}
+#NavigationBar a:hover, .MusicSegment:hover {
+    color: lightblue;
+    text-shadow: 0 0 10px lightblue, 0 0 20px lightblue;
+}
+button {
+    background: none;
+    border: none;
+	cursor: pointer;
+    padding: 0 5px 0 5px;
+	transition: filter 0.6s;
+}
+button:hover {
+	filter: drop-shadow(0 0 10px lightblue) drop-shadow(0 0 5px lightblue) brightness(3.5) saturate(2);
+}
+#OurCompany { 
+	background-color: rgba(0, 0, 0, 0.5); 
+	border-radius: 20px;
+	width: 100%;
+	display: grid;
+    place-items: center;
+	margin-bottom: 10px;
+}
+#OurProduct { 
+	background-color: rgba(0, 0, 0, 0.5); 
+	border-radius: 20px;
+	width: 100%;
+	display: grid;
+    place-items: center;
+	margin: 10px 0 10px 0;
+}
+#ProgressChart {
+	background-color: rgba(72, 67, 77, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 75px auto;
+}
+.ChapterContainer {
+	display: flex;
+}
+.ChapterSegment {
+    background-color: rgba(120, 111, 128, 0.8);
+	width: 30%;
+    color: white;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+}
+.ChapterProgress {
+    background-color: rgba(120, 111, 128, 0.8);
+	border-radius: 20px;
+	width: 0%;
+    color: white;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+}
+.ProgressPercentage {
+    position: absolute;
+    bottom: 0px;
+    width: auto;
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+.ChapterContainer:hover .ChapterSegment {
+    transform: translateX(-5%);
+    background-color: rgba(120, 111, 128, 1);
+    height: 75px;
+    color: lightblue;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.ChapterContainer:hover .ChapterProgress {
+	width: 67.5%;
+	transform: translateY(25%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.ChapterContainer:hover .ProgressPercentage {
+    bottom: 12.5px;
+    opacity: 1;
+}
+#ChapterProgressBar {
+    width: 95%;
+    height: 70%;
+    background: rgb(72, 67, 77);
+    border-radius: 30px;
+	overflow: hidden;
+}
+#ChapterCurrentProgress {
+    height: 100%;
+    background-color: lightblue;
+}
+#SourceCode { 
+	background-color: rgba(0, 0, 0, 0.5); 
+	border-radius: 20px;
+	width: 100%;
+	display: grid;
+    place-items: center;
+	margin: 10px 0 10px 0;
+}
+#SourceCodeSegment {
+	width: 85%;
+	height: 500px;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+	background-color: rgb(72, 67, 77);
+}
+#CharacterChart {
+	margin: 10px 0 10px 0;
+}
+.ChartRows {
+	display: flex;
+	justify-content: center;
+}
+.Characters {
+	background-color: rgba(120, 111, 128, 0.8);
+	border-radius: 20px;
+	padding: 15px 15px 0 15px;
+	margin: 25px 75px 25px 75px;
+	filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+.CharacterIcons {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	transition: all 0.6s ease-in-out;
+}
+.Sprites {
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	opacity: 0;
+	transform: translate(-50%, -75%);
+	transition: all 0.6s ease-in-out;
+	z-index: 100;
+}
+#Jad:hover .CharacterIcons, .IconActive {
+	transform: translateY(-5%);
+    filter: brightness(0.5);
+	box-shadow: 0 10px 20px (0, 0, 0);
+}
+#Jad:hover .Sprites {
+	transform: translate(-50%, -125%);
+    opacity: 1;
+}
+.SpriteActive {
+	opacity: 1;
+	transform: translate(-50%, -125%);
+	transition: all 0.2s ease-in-out;
+}
+#ContactUs { 
+	background-color: rgba(0, 0, 0, 0.5); 
+	border-radius: 20px;
+	width: 100%;
+	display: grid;
+    place-items: center;
+	margin: 10px 0 10px 0;
+}
+#PlaylistContainer {
+	background-color: rgba(72, 67, 77, 0.8);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin: 75px auto;
+}
+.MusicSegment {
+    background-color: rgba(120, 111, 128, 0.8);
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: relative;
+}
+.MusicSegment:hover {
+    transform: translateX(-5%);
+    background-color: rgba(120, 111, 128, 1);
+    height: 75px;
+    color: lightblue;
+    font-size: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.MusicTitle {
+    position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+    transition: left 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+.MusicDescription {
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    width: auto;
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transition: all 0.6s ease-in-out;
+}
+.MusicSegment:hover .MusicTitle {
+    left: 20px;
+	transform: translateX(0);
+}
+.MusicSegment:hover .MusicDescription {
+    bottom: 22.5px;
+    opacity: 1;
+}
