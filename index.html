@@ -1,1 +1,290 @@
+<html>
+	<!-- HI IM JAD :D Welcome to Prioritix - JPCG OFFICIAL WEBSITE!!!!!-->
+<head>
+	<title> GYAKUTEN: Walk Anew </title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<link rel="stylesheet" type="text/css" href="JPCG.css" title="style" />
+</head>
 
+<body class = "Background">
+	<div id = "NavigationBar">
+		<div class = "Top">
+		</div>
+		<div class = "Bottom">
+			<div class = "Left">
+				<a href="#OurCompany">Our Company</a>
+				<a href="#OurProduct">Our Product</a>
+				<a href="#SourceCode">Source Code</a>
+				<a href="#ContactUs">Contact Us</a>
+			</div>
+		
+			<div class = "Right">
+				<div class = "RightLeft">
+					<p></p>
+				</div>
+		
+				<div class = "RightRight">
+					<a href="#login">Log In</a>
+					<a href="#signup">Sign Up</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class = "JadContentStyle">
+        <div id = "OurCompany">
+            <h1>Our Company</h1>
+            <p> 
+				Our company "Prioritix" operates in the decision-support industry, recognizing the overwhelming fatigue that comes with option overload- <br>
+				a common problem that affects the masses worldwide- yet isn't well addressed, rendering oneself cumbered and unable to make a choice, <br>
+				hindering overall productivity and efficiency. Prioritix aims to develop smart decision-support tools and systems <br>
+				to aid users in making grounded, well-informed and stress-free decisions. <br>
+			</p> <br>
+			<p> 
+				The decision-support industry is becoming more and more important as people face more daily choices and become encumbered with <br>
+				option overload in various aspects of life, forming and shaping our vision to empower individuals to make clear, confident decisions <br>
+				in this world of endless options, to instantiate a mindset of productivity and reduce the ever-looming stress of decision fatigue. <br>
+			</p> <br>
+			<p> 
+				And to realize that dream, we have made it our mission to create flexible, reliable and intuitive tools to simplify decision making <br>
+				and comply with the people's needs by offering both structured and customizable prioritization methods, <br>
+				and enhance - across personal, academic, and professional settings - user well-being, productivity, and efficiency. <br>
+			</p> <br>
+			<p> 
+				Specializing in productivity and decision-support software, we operate in SaaS [Software as a Service] industry, with the objective <br>
+				of this marketing plan being the successful launch of Prioritix's new product: the Priority Checklist Generator [PCG] <br>
+			</p> <br>
+        </div>
+
+        <div id = "OurProduct">
+            <h1>Our Product</h1>
+			<p> 
+				We empathized and - based on feedback from interviewees - brainstormed ideas. While we first thought about creating a random name picker,
+				we wanted something more complex, flexible and something that helps guide the user - giving them a clear sense of priority,
+				we asked ourselves many questions on how we could make it more flexible, <br>
+				offer freedom of choice and open doors. And thus- we settled on a design. <br>
+			</p> <br>
+			<p> 
+				By giving way for the user to add, remove and easily modify their categories based on their needs, and providing a couple methods of entering data at their convenience, we created:
+				The Priority Checklist Generator [PCG]
+				The Priority Checklist Generator is a flexible and reliable decision-support tool designed to aid users in prioritizing and organizing their 
+				options and choices based on professional and personal criteria. Covering a wide range of situations and circumstances,
+				from the high-risk like academic course selection and financial planning, to the low-risk like picking a game to play,
+				what clothes to wear, choosing something from the restaurant menu for dinner, and most daily choices, this tool offers a streamlined,
+				stress-free decision making catered to all contexts and users looking for a simplified way to make their choices and escape decision-fatigue.
+			</p> <br>
+			<p> Equipped with many features, the most unique and prominent can be summed up in: </p>
+			<div id = "ProgressChart">
+				<div id = "0" class = "ChapterContainer">
+					<div class = "ChapterSegment"> <p> 1 </p> </div>
+					<div class = "ChapterProgress"> 
+						<p class = "ProgressPercentage"> .	Dual-input options </p> 
+						<div id = "ChapterProgressBar">
+							<div id = "ChapterCurrentProgress" style = "width: 25%"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div id = "1" class = "ChapterContainer">
+					<div class = "ChapterSegment"> <p> 2 </p> </div>
+					<div class = "ChapterProgress"> 
+						<p class = "ProgressPercentage"> .	Flexible & dynamic categories </p> 
+						<div id = "ChapterProgressBar">
+							<div id = "ChapterCurrentProgress" style = "width: 25%"></div>
+						</div>
+					</div>
+				</div>
+				
+				<div id = "2" class = "ChapterContainer">
+					<div class = "ChapterSegment"> <p> 3 </p> </div>
+					<div class = "ChapterProgress"> 
+						<p class = "ProgressPercentage"> .	User-centered output  </p> 
+						<div id = "ChapterProgressBar">
+							<div id = "ChapterCurrentProgress" style = "width: 25%"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p> 
+				While decision support systems exist already, we differentiate ours through it's flexibility.
+				Unlike other niche-specific tools, this one accommodates a wide range of decision-making contexts
+				across multiple different sectors; by combining the manual and the template-based input, it becomes
+				a versatile tool unlike any other with it's capability of being implemented in any decision-making process, making it novel to the whole world.
+			</p> <br>
+			<p> 
+				We have conducted multiple 1-on-1 interviews with four people to empathize and learn about their current situation and experience with option overload,
+				and we have recorded real data of what they think, feel, hear, see, say, do, pains, and gains. Giving us a clear outlook of what our users are going
+				through and making adjustments to our product accordingly. 
+			</p> <br>
+        </div>
+
+        <div id = "SourceCode">
+            <h1>Source Code</h1>
+            <p> Copy and Paste the Source Code Into Any C++ Compiler And Enjoy The Decision Making Process! </p> <br>
+			<p id = "SourceCodeSegment">
+#include <iostream>
+#include <vector>
+#include <cstring>
+#include <algorithm>
+#include <fstream>
+using namespace std;
+bool comparePairs(const pair<double, string>& a, const pair<double, string>& b) {
+    return a.first > b.first;
+}
+int main() {
+    char Choice;
+    int NumOfOptions, NumberOfActiveCategories = 0, CurrentVectorSize;
+    double ActiveWeightSum = 0;
+    vector<double> Weights = {0.327, 0.214, 0.143, 0.137, 0.072, 0.071, 0.036};
+    vector<double> Results;
+    bool Terminator = true, Int = false, Rew = false, Diff = false, TC = false, Conv = false, Flex = false;
+    vector<string> ActiveCategories = {"Interest", "Rewards", "Difficulty", "Time Commitment", "Cost", "Convenience", "Flexibility"};
+    string Categories[7][2] = { {"Interest", ""},
+                                {"Rewards", ""},
+                                {"Difficulty", ""},
+                                {"Time Commitment", ""},
+                                {"Cost", ""},
+                                {"Convenience", ""},
+                                {"Flexibility", ""} };
+    vector<string> UserOptions;
+    vector<vector<double>> OptionEvaluations;
+    vector<pair<double, string>> ResultsAndOptions;
+    char OptionInput[1000];
+    ofstream Output;
+    cout << "Hello user! Welcome to Jad's Priority Checklist Generator (JPCG)! Would you like to:\n1 - Proceed with manual procedures?\n2 - Use a pre-made template?\n? = ";
+    cin >> Choice;
+    switch (Choice) {
+        case '1':
+            cout << "To start: How many options would you like to input? ";
+            while (Terminator) {
+              cin >> NumOfOptions; 
+              if (NumOfOptions <= 1) {
+                  cout << NumOfOptions << " is not a sufficient number of options to generate a priority list (Must be 2 or more): ";
+              }
+              else {
+                  Terminator = false;
+              }
+            }
+            cout << "Excellent! Now: Please answer with y/n to indicate which categories of evaluation you'd like to keep for this priority checklist.\n(Interest, Rewards, Difficulty, Time Commitment, Cost, Convenience, Flexibility)" << endl;
+            Terminator = true;
+            Output.open("Prority_Checklist.txt");
+            if (!Output) {
+                cerr << "Error opening file for writing!" << endl;
+                return 1;
+            }
+            for (int i = 0 ; i < 7 ; i++) {
+                cout << i + 1 << " - " << Categories[i][0] << "? ";
+                while (Terminator) {
+                    cin >> Categories[i][1];
+                    if (Categories[i][1] == "Y" || Categories[i][1] == "y") {
+                        Terminator = false;
+                        ActiveWeightSum += Weights[i];
+                        NumberOfActiveCategories++;
+                    }
+                    else if (Categories[i][1] == "N" || Categories[i][1] == "n") {
+                        Terminator = false;
+                    }
+                    else {
+                        cout << "\"" <<  Categories[i][1] << "\"" << " is not a valid answer (Must be Y or N): ";
+                    }
+                }
+                Terminator = true;
+            }
+            for (int i = 6 ; i >= 0 ; i--) {
+                if (Categories[i][1] == "N" || Categories[i][1] == "n") {
+                    ActiveCategories.erase(ActiveCategories.begin() + i);
+                    Weights.erase(Weights.begin() + i);
+                }
+            }
+            cout << "Wonderful! These are your current active categories: (" << ActiveCategories[0];
+            CurrentVectorSize = ActiveCategories.size();
+            for (int i = 1 ; i < CurrentVectorSize ; i++) {
+                cout << ", " << ActiveCategories[i];
+            }
+            UserOptions.resize(NumOfOptions);
+            OptionEvaluations.resize(NumOfOptions, vector<double>(CurrentVectorSize));
+            Results.resize(NumOfOptions);
+            cout << ") \nNow: Please enter your " << NumOfOptions << " options and their evaluation for each category for each question from 1 to 10. Starting with:" << endl;
+            for (int i = 0 ; i < NumOfOptions ; i++) {
+                cout << "\nOption " << i + 1 << ": ";
+                cin.ignore();
+                cin.getline(OptionInput, 1000);
+                char *Formatter = strtok(OptionInput, " ");
+                while (Formatter != NULL) {
+                    Formatter[0] = toupper(Formatter[0]);
+                    UserOptions[i] += Formatter;
+                    Formatter = strtok(NULL, " ");
+                }
+                for (int j = 0 ; j < CurrentVectorSize ; j++) {
+                    cout << ActiveCategories[j] << ": ";
+                    while (Terminator) {
+                        cin >> OptionEvaluations[i][j];
+                        if (OptionEvaluations[i][j] < 1 || OptionEvaluations[i][j] > 10) {
+                            cout << OptionEvaluations[i][j] << " is not a valid ranking (Must be between 1 and 10 (Inclusive)): ";
+                        }
+                        else {
+                            Terminator = false;
+                        }
+                    }
+                    Terminator = true;
+                }
+            }
+            cout << endl;
+            for (int i = 0 ; i < NumOfOptions ; i++) {
+                Results[i] = 0;
+                for (int j = 0 ; j < CurrentVectorSize ; j++) {
+                    Results[i] += OptionEvaluations[i][j] * Weights[j];
+                }
+                Results[i] /= ActiveWeightSum;
+                ResultsAndOptions.push_back({Results[i], UserOptions[i]});
+            }
+            sort(ResultsAndOptions.begin(), ResultsAndOptions.end(), comparePairs);
+            
+            Output << "Priority Checklist:" << endl;
+            for (const auto& pair : ResultsAndOptions) {
+                Output << pair.second << " - Score: " << pair.first << endl;
+            }
+            Output.close();
+            cout << "Congratulations!! The priority checklist has been written to \"Priority_Checklist.txt\"." << endl;
+            cout << "Thank you for using Jad's Priority Checklist Generator (JPCG)! I hope it helps you make informed decisions. Have a wonderful day and remember, every choice brings you closer to your goals!\n\t\t- Sincerely, Jad" << endl;
+            break;
+        case '2':
+            break;
+        default:
+            cout << "Exiting program.";
+            return 1;
+    }
+    return 0;
+}
+
+			</p>
+        </div>
+
+        <div id = "ContactUs">
+            <h1> Contact Us </h1>
+            <p> Contact Us Through One Of Our Socials Or Call Us On Our Phone Number For Support! </p>
+			<div id = "PlaylistContainer">
+				<div id = "0" class = "MusicSegment" onclick = "UpdateMusicByIndex(0)">
+					<p class = "MusicTitle"> Whatsapp </p>
+					<p class = "MusicDescription"> +971-56-360-7123 </p>
+				</div>
+				<div id = "1" class = "MusicSegment" onclick = "UpdateMusicByIndex(1)">
+					<p class = "MusicTitle"> Instagram </p>
+					<p class = "MusicDescription"> @Prioritix </p>
+				</div>
+				<div id = "2" class = "MusicSegment" onclick = "UpdateMusicByIndex(2)">
+					<p class = "MusicTitle"> X </p>
+					<p class = "MusicDescription"> @Prioritix </p>
+				</div>
+			</div>
+        </div>
+    </div>
+	<br><br>
+	<audio id = "AudioPlayer">
+		<source src = "Tracks/After The Long Voyage.mp3" type = "audio/mpeg">
+		Your browser does not support the audio element.
+	</audio>
+	
+	<script src = "JPCG.js"></script>
+</body>
+
+</html>
